@@ -1,5 +1,4 @@
 Flask
-Flask-Dropzone==1.6.0
 gunicorn
 h5py
 Jinja2
