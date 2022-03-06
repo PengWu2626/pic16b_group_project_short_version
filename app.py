@@ -264,6 +264,7 @@ def get_gallery():
 
     uploads_path = [x for x in os.listdir('static/uploads')if (x.split('.')[-1]).lower() in ALLOWED_EXTENSIONS ]
     index = (range(1,len(uploads_path)+1))
+    uploads_path = list(zip(index, uploads_path))
 
     if request.method == 'GET':
         return render_template('display_uploads.html', uploads_path = uploads_path )
@@ -271,9 +272,6 @@ def get_gallery():
 
         # extract the value of submit button from request
         user_clicked_image_name =request.form.get('submitbutton')
-        print()
-        print(user_clicked_image_name)
-        print()
         user_clicked_image_path = (os.path.join(UPLOAD_FOLDER, user_clicked_image_name))
 
         # get number of face
