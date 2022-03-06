@@ -339,12 +339,6 @@ def findyourdog():
         return render_template('findyourdog.html', dogmap=dog_recommendation.prepare_recommendation_df()[1], recommendation_list=recommendation_list, find_any=find_any, dog_recommendations=dog_recommendations)
 
 
-
-@app.route('/glass/', methods=['GET','POST'])
-def glass():
-    return render_template('glass.html')
-
-
 if __name__ == "__main__":
     app.run()
 

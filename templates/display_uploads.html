@@ -14,7 +14,6 @@
 <body>
 
   <form  action="{{ url_for('get_gallery')}}" method="post">
-    <div class="containerall">
     {% for image_link in uploads_path %}
     <!-- Glassmorphism -->
     <!-- I find some cool Real Glassmorphism Card Hover Effects at Youtube -->
@@ -24,10 +23,11 @@
         <div class="content">
           <h2>{{image_link[0]}}</h2>
           <p>{{image_link[1]}}</p>
-          <input type="image" name="submitbutton" value = "{{image_link[1]}}" src="{{ url_for('display_image', filename=image_link[1]) }}" alt="{{image_link[1]}}" height="280" width="280"> 
+          <button type="submit" name="submitbutton" value = "{{image_link[1]}}">
+          <img src="{{ url_for('display_image', filename=image_link[1]) }}" alt="{{image_link[1]}}" height="280" width="265" >
         </div>
       </div>
-      </div>
+    </div>
     <!-- End Glassmorphism -->
     {% endfor %}
     </form>
