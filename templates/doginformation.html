@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h3>{% block title %}Dog Information{% endblock %}</h3>
+  <b style="color:rgb(228, 228, 240);">The following data are scraped from <a href ='https://dogtime.com/dog-breeds/profiles'> <b>DogTime</b></a> </b>
+{% endblock %}
+
+{% block content %}
+<body>
+
+<form  action="{{ url_for('doginfo')}}" method="post">
+    
+  <label for="pick"  style="color:rgb(228, 228, 240);">Choose Dog Breed:</label>
+  <select name="dogs" id="dogs">
+    {% for dog in dog_breed_all %}
+    <option value='{{dog}}'>{{ dog }}</option>
+    {% endfor %}
+
+  </select>
+ 
+</div>
+<button type="submit" class="btn"  style="color:rgb(6, 6, 43);">Go</button>
+</div>
+
+</form>
+
+{% if select %}
+
+  <br>
+  <br>
+  <h2 style="color:rgb(228, 228, 240);">You selected {{select}}</h2>
+  <img style ="border-radius: 50px;" src='{{dogurl}}' alt="Image of {{select}}" width="300" height="300">
+  <br>
+  <br>
+  <div id='chart' class='chart'”></div>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  var graphs = {{graphJSON | safe}};
+  Plotly.plot('chart',graphs,{});
+</script>
+{% endif %}
+
+</body>  
+{% endblock %}
+
