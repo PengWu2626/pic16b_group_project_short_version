@@ -1,0 +1,54 @@
+<!doctype html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<title>{% block title %}{% endblock %} - DogFR</title>
+<!-- nav bar -->
+
+<nav class="navbar">
+  <!-- <b>Navigation:</b> -->
+  <ul>
+    <li><h1 id = "main_title">DogFR</h1></li>
+    <li><a href="{{ url_for('intro') }}">Introduction</a></li>
+    <li><a href="{{ url_for('index') }}">Upload</a></li>
+    <li><a href="{{ url_for('drag_upload') }}">Drag Upload</a></li>
+    <li><a href="{{ url_for('get_gallery') }}">Click Gallery Upload</a></li>
+    <li><a href="{{ url_for('doginfo') }}">DogTime Information</a></li>
+    <li><a href="{{ url_for('findyourdog')}}">Find Your Best Dog</a></li>
+    <li><a href="{{ url_for('glass')}}">Glass</a></li>
+  </ul>
+</nav>
+
+<!-- I combined two moving background which I dinf online -->
+<!-- Parallax Star background -->
+<!-- I find an example of using Parallax Star background, Created by Saransh Sinha-->
+<!-- https://www.sliderrevolution.com/resources/css-animated-background/-->
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+<div id='title'></div>
+<!-- End Parallax Star background in CSS-->
+
+<!-- SHOOTING STAR background by Alphardex --> <!-- https://freefrontend.com/css-animated-backgrounds/ -->
+<div class="movingstars">
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+</div>
+<!-- End SHOOTING STAR background-->
+<!-- End combine two moving background -->
+
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% block content %}{% endblock %}
+</section>
