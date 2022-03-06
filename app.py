@@ -1,7 +1,6 @@
 from flask import Flask, flash, request, redirect, url_for, render_template
 import os
 from werkzeug.utils import secure_filename
-from flask_dropzone import Dropzone
 import pandas as pd
 import numpy as np
 import tensorflow as tf
@@ -11,7 +10,6 @@ from src import dog_classes
 from src import dogtime_barcharts
 
 app = Flask(__name__)
-dropzone = Dropzone(app)
 
 UPLOAD_FOLDER = 'static/uploads/'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
