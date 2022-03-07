@@ -17,7 +17,7 @@ This project exceeds the Heroku slug size (500MB). Therefore, we created another
 ```
 the short version still has `slug size (446 MB) exceeds the soft limit (300 MB)` which may `affect boot time`.
 It's easy to get H12 errors ( H12 errors occur when an HTTP request takes longer than 30 seconds to complete).
-Sometimes you can close and re-open it to solve the problem.
+Sometimes you can close and re-open your browser to solve the problem.
 
 
 This Web app uses a `lot of memory`, and it might be `crashed` if you use pictures to predict too many times at once. I suggest trying two images of predicting, then closing your browser and re-open it.  
