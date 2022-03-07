@@ -10,7 +10,8 @@
 
 ## Short Version of This Project
 
-This project exceeds the Heroku slug size (500MB). Therefore, we created another short version of this project in the [testing project repository](https://github.com/PengWu2626/testing_project). The short version of this project moved face detecting and drop zone.
+This project exceeds the Heroku slug size (500MB). Therefore, we created another short version of this project in the [pic16b_group_project_short_version
+Public](https://github.com/PengWu2626/pic16b_group_project_short_version) repository. The short version of this project removed face detecting and drop zone.
 
 ```diff
 - Warning:
