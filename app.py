@@ -22,7 +22,7 @@ classname = dog_classes.CLASS_NAME
 # cat_dog_model from homework blog post 5
 cat_dog_model = tf.keras.models.load_model('static/models/blog_post_model4_logit2.h5')
 # used transfer learning Xception
-model2 = tf.keras.models.load_model('static/models/dogmodel2.h5')
+model2 = tf.keras.models.load_model('static/models/model2.h5')
 
 app.secret_key = "secret key"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -219,7 +219,6 @@ def upload_image():
 
         # get number of face
         any_face=0
-        # any_face = face_detect.faceDetector(filename, UPLOAD_FOLDER, DEST_FOLDER)
 
         uploaded_image_path = (os.path.join(UPLOAD_FOLDER, file.filename))
 
@@ -255,7 +254,6 @@ def upload_image():
         return redirect(request.url)
     
 
-
 # the third way to upload an image from uploaded folder, so there are many repeated codes
 @app.route('/gallery',methods=['GET','POST'])
 def get_gallery():
@@ -264,17 +262,16 @@ def get_gallery():
     index = (range(1,len(uploads_path)+1))
     uploads_path = list(zip(index, uploads_path))
 
+
     if request.method == 'GET':
         return render_template('display_uploads.html', uploads_path = uploads_path )
     else:
-
         # extract the value of submit button from request
         user_clicked_image_name =request.form.get('submitbutton')
         user_clicked_image_path = (os.path.join(UPLOAD_FOLDER, user_clicked_image_name))
 
         # get number of face
-        any_face=0
-        # any_face = face_detect.faceDetector(user_clicked_image_name, UPLOAD_FOLDER, DEST_FOLDER)
+        any_face = 0
         catordog, catordog_confidence = cat_or_dog(user_clicked_image_path)
         most_likely_breeds_list, most_likely_probability_list = dog_breed_prediction(user_clicked_image_path)
         most_likely_breeds_list, pic_path_list = top_three_images(most_likely_breeds_list=most_likely_breeds_list)
@@ -344,4 +341,6 @@ if __name__ == "__main__":
 
 
 
+
 # export FLASK_ENV=development; flask run
+

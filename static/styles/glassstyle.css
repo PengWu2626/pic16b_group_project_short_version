@@ -1,17 +1,13 @@
 h3{
   color: white;
 }
-
-
 /* 
 Glassmorphism CSS
 I find some cool Real Glassmorphism Card Hover Effects at Youtube
 https://www.youtube.com/watch?v=hv0rNxr1XXk 
 */
-
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-.container
-{
+.container{
   position: relative;
   display: inline-flex;
   flex-flow: wrap;
@@ -19,8 +15,8 @@ https://www.youtube.com/watch?v=hv0rNxr1XXk
   align-items: center;
   z-index: 1;
 }
-.container .card
-{
+
+.container .card{
   position: relative;
   width: 300px;
   height: 400px;
@@ -33,21 +29,21 @@ https://www.youtube.com/watch?v=hv0rNxr1XXk
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
 }
-.container .card .content
-{
+
+.container .card .content{
   padding: 10px;
   text-align: center;
   transform: translateY(50px);
   opacity: 55%;
   transition: 0.5s;
 }
-.container .card:hover .content
-{
+
+.container .card:hover .content{
   transform: translateY(0px);
   opacity: 100%;
 }
-.container .card .content h2
-{
+
+.container .card .content h2{
   position: fixed;
   top: -110px;
   right: 20px;
@@ -55,9 +51,10 @@ https://www.youtube.com/watch?v=hv0rNxr1XXk
   color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
 }
-.container .card .content p
-{
+
+.container .card .content p{
   font-size: 0.8em;
   color: #fff;
   font-weight: 400;
+
 }

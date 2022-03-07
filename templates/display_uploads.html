@@ -3,10 +3,8 @@
 {% block header %}
 <head>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/glassstyle.css') }}">
-    <h3>{% block title %}Uploaded Images{% endblock %}</h3>
-    
+  <h3>{% block title %}User Uploaded Images{% endblock %}</h3>
 </head>
-
 {% endblock %}
 
 
@@ -14,6 +12,7 @@
 <body>
 
   <form  action="{{ url_for('get_gallery')}}" method="post">
+    <div class="containerall">
     {% for image_link in uploads_path %}
     <!-- Glassmorphism -->
     <!-- I find some cool Real Glassmorphism Card Hover Effects at Youtube -->
@@ -27,7 +26,7 @@
           <img src="{{ url_for('display_image', filename=image_link[1]) }}" alt="{{image_link[1]}}" height="280" width="265" >
         </div>
       </div>
-    </div>
+      </div>
     <!-- End Glassmorphism -->
     {% endfor %}
     </form>
