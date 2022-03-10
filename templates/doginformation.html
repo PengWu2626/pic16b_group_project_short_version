@@ -10,7 +10,6 @@
 
 {% block content %}
 <body>
-
 <form  action="{{ url_for('doginfo')}}" method="post">
     
   <label for="pick"  style="color:rgb(228, 228, 240);">Choose Dog Breed:</label>
@@ -43,12 +42,13 @@
     
   <br>
   <br>
-  <div id='chart' class='chart'”></div>
+<div id='chart' class='chart' style="opacity: 80%; width: 80%; margin-left: auto;margin-right: auto; overflow: visible;">
 <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 <script type='text/javascript'>
   var graphs = {{graphJSON | safe}};
   Plotly.plot('chart',graphs,{});
 </script>
+</div>
 {% endif %}
 
 
@@ -63,6 +63,5 @@
     "max-glare": 1,
     })
   </script>
-</body>  
+  </body>  
 {% endblock %}
-
