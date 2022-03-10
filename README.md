@@ -34,7 +34,7 @@ Public](https://github.com/PengWu2626/pic16b_group_project_short_version) reposi
 - Warning:
 ```
 
-the short version still has `slug size (446 MB) exceeds the soft limit (300 MB)` which may `affect boot time`.
+the short version still has `slug size (435 MB) exceeds the soft limit (300 MB)` which may `affect boot time`.
 It's easy to get H12 errors ( H12 errors occur when an HTTP request takes longer than 30 seconds to complete).
 Sometimes you can close and re-open your browser to solve the problem.
 
